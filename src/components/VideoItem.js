@@ -1,22 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
 import { selectVideo } from "./../actions/index";
-import "./VideoItem.css";
+import unescapeHTML from "../utility/htmlEntityFunctions";
 
-const VideoItem = ({ selectedVideo }) => {
+const VideoItem = ({ video, selectVideo }) => {
   return (
-    // <div onClick={() => onVideoSelect(video)} className="video-item item">
     <div
-      onClick={async () => await selectVideo(selectedVideo)}
-      className="video-item item"
+      onClick={() => selectVideo(video)}
+      className="item"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        cursor: "pointer",
+        fontWeight: 600
+      }}
     >
       <img
-        alt={selectedVideo.snippet.title}
+        alt={unescapeHTML(video.snippet.title)}
         className="ui image"
-        src={selectedVideo.snippet.thumbnails.medium.url}
+        src={video.snippet.thumbnails.medium.url}
+        style={{ maxWidth: "180px", paddingRight: "7px" }}
       />
       <div className="content">
-        <div className="header">{selectedVideo.snippet.title}</div>
+        <div className="header">{unescapeHTML(video.snippet.title)}</div>
       </div>
     </div>
   );

@@ -1,36 +1,26 @@
 import React from "react";
-import { connect } from "react-redux";
+import unescapeHTML from "../utility/htmlEntityFunctions";
 
-const VideoDetail = ({ selectedVideo }) => {
-  // simple error handling for null initialization
+const VideoDetail = ({ video }) => {
+  // simple error handling for loading
 
-  // if (!selectedVideo) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;
-  if (!selectedVideo) {
-    return console.log("it is loading..");
+  if (Object.entries(video).length === 0) {
+    return <div>Loading...</div>;
   }
+
+  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 
   return (
     <div>
       <div className="ui embed">
-        {/* <iframe title="video player" src={videoSrc} /> */}
+        <iframe title="video player" src={videoSrc} />
       </div>
       <div className="ui segment">
-        {/* <h4 className="ui header">{selectedVideo.snippet.title}</h4>
-        <p>{selectedVideo.snippet.description}</p> */}
+        <h4 className="ui header">{unescapeHTML(video.snippet.title)}</h4>
+        <p>{unescapeHTML(video.snippet.description)}</p>
       </div>
     </div>
   );
 };
-
-// const mapStateToProps = (state, ownProps) => {
-//   console.log(ownProps);
-//   return { selectedVideo: ownProps.selectedVideo };
-// };
-
-// export default connect(mapStateToProps)(VideoDetail);
 
 export default VideoDetail;

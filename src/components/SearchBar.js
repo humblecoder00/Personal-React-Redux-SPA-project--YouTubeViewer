@@ -9,9 +9,6 @@ class SearchBar extends Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-
-    // TODO: Make sure we call callback from parent component.
-    // this.props.onFormSubmit(this.state.term);
     this.props.searchAndSelectFirstVideo(this.props.searchTerm);
   };
 
@@ -20,12 +17,17 @@ class SearchBar extends Component {
       <div className="search-bar ui segment">
         <form onSubmit={this.onFormSubmit} className="ui form">
           <div className="field">
-            <label>Video Search</label>
-            <input
-              type="text"
-              value={this.props.searchTerm}
-              onChange={this.handleInput}
-            />
+            <div className="ui input">
+              <input
+                type="text"
+                value={this.props.searchTerm}
+                onChange={this.handleInput}
+                placeholder="Search"
+              />
+              <button className="ui icon button">
+                <i className="search icon" />
+              </button>
+            </div>
           </div>
         </form>
       </div>
