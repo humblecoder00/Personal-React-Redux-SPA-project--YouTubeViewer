@@ -2,7 +2,7 @@
 
 ## About:
 
-YouTubeViewer is a responsive SPA, a simplified clone of YouTube's video view section.
+YouTubeViewer is a responsive SPA, a simplified clone of YouTube's video view & search section.
 It uses YouTube Data API v3 to perform the queries.
 
 ## Functionality:
