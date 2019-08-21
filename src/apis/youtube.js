@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const KEY = "AIzaSyCy4L1XS-J9g6YVJx8GH39G4LQ7TsuYI6E";
+const KEY = process.env.YOUTUBE_API_KEY;
 
 export async function getYoutubeData(term) {
   const response = await axios.get("/search", {
