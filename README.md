@@ -16,4 +16,11 @@ Search results are restricted to videos only, channel type results are ignored.
 
 `Front-end:` Built with using ReactJS, along with couple handy npm packages. Redux for state management and Redux Thunk for handling asynchronous actions. CSS is mainly handled by using Semantic UI framework together with JSX inline styles on several parts.
 
+## Credits:
+Developed based on "YouTube" SPA React application example, from Stephen Grider's course "Modern React with Redux".
+Improved the state management by using Redux, instead of using React.
+Implemented responsive design for different devices.
+
+Course link: https://www.udemy.com/course/react-redux/
+
 ## Live version: https://youtubeviewer.netlify.com/
