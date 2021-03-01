@@ -23,4 +23,5 @@ Implemented responsive design for different devices.
 
 Course link: https://www.udemy.com/course/react-redux/
 
-## Live version: https://youtubeviewer.netlify.com/
+
+Note: Live preview is temporarily unavailable due to external API changes. This will be updated soon.
